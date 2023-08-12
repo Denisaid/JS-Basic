@@ -1,0 +1,22 @@
+function shopping(input){
+    let money=Number(input[0]);
+    let nVideoCard=Number(input[1]);
+    let nCpu=Number(input[2]);
+    let nRam=Number(input[3]);
+    let sumVideoCard=nVideoCard*250;
+    let priceCpu=sumVideoCard*0.35;
+    let sumCpu=nCpu*priceCpu;
+    let priceRam=sumVideoCard*0.1;
+    let sumRam=nRam*priceRam;
+    let total=sumVideoCard+sumCpu+sumRam;
+    if (nVideoCard>nCpu){
+        total = total * 0.85; 
+    }
+    if (total<=money){
+    
+        console.log(`You have ${(money-total).toFixed(2)} leva left!`);
+    } else {
+        console.log(`Not enough money! You need ${(total-money).toFixed(2)} leva more!`);
+    }
+    
+    }
